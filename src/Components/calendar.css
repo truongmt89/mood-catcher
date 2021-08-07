@@ -1,0 +1,51 @@
+#months{
+    width: 1000px;
+    height: 200px;
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(12, 80px);
+    align-content: center;
+    justify-content: center;
+    grid-gap: 3px;
+}
+
+.month{
+    width: 70px;
+    height: 70px;
+    background-color: blue;
+    text-align: center;
+}
+
+#days{
+    width: 200px;
+    height: 1000px;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-rows: (31, 10px);
+    grid-gap: 1px;
+}
+
+.day{
+    width: 100px;
+    height: 20px;
+    background-color: chartreuse;
+    text-align: center;
+}
+
+.calendar{
+    width: 300px;
+    height: 1000px;
+    background-color: cornflowerblue;
+    display: grid;
+    grid-template-columns: repeat(12, 20px);
+    grid-template-rows: repeat(31, 20px);
+    grid-gap: 1px;
+    align-content: center;
+    justify-content: center;
+}
+
+.tile{
+    width: 15px;
+    height: 15px;
+    background-color: darkkhaki;
+}

@@ -6,7 +6,6 @@
     grid-template-columns: repeat(12, 80px);
     align-content: center;
     justify-content: center;
-    grid-gap: 3px;
 }
 
 .month{
@@ -16,36 +15,43 @@
     text-align: center;
 }
 
+#calendar-container{
+    width: 1000px;
+    height: auto;
+    display: flex;
+}
+
 #days{
     width: 200px;
-    height: 1000px;
+    height: 776px;
     background-color: blueviolet;
     display: grid;
-    grid-template-rows: (31, 10px);
-    grid-gap: 1px;
+    grid-template-rows: repeat(6, 10px);
+    grid-gap: 90px;
+    justify-content: right;
 }
 
 .day{
-    width: 100px;
-    height: 20px;
+    width: 40px;
+    height: 26px;
     background-color: chartreuse;
     text-align: center;
 }
 
 .calendar{
-    width: 300px;
-    height: 1000px;
+    width: 400px;
+    height: 776px;
     background-color: cornflowerblue;
     display: grid;
-    grid-template-columns: repeat(12, 20px);
-    grid-template-rows: repeat(31, 20px);
+    grid-template-columns: repeat(12, 24px);
+    grid-template-rows: repeat(31, 24px);
     grid-gap: 1px;
-    align-content: center;
     justify-content: center;
 }
 
 .tile{
-    width: 15px;
-    height: 15px;
+    width: 24px;
+    height: 24px;
     background-color: darkkhaki;
+    border: 1px solid red;
 }

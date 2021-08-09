@@ -14,7 +14,20 @@ function daysInMonth(month) {
     }
     console.log(grid)
 
-    const days = new Array(31).fill(null).map((_, i) => i+1);
+    let days = new Array(7).fill(0);
+    let counter = 0;
+    days = days.map((element, index) => {
+        if(index === 0 ){
+            counter += 1
+            return counter
+        }else if(index === 1){
+            counter += 4
+            return counter
+        }else{
+            counter += 5
+            return counter
+        }
+    })
     console.log(days)
     const squares = []
     for(let i = 0; i < 372; i++){
@@ -28,15 +41,17 @@ const Calendar = (props) => {
                     return <div className="month"> {month} </div>   
                 })} 
             </div>
-            <div id="days">
-                {days.map((day, index) => {
-                    return <div className="day"> {day} </div>   
-                })} 
-            </div>
-            <div className="calendar">
-                {squares.map((element, index) => {
-                    return <div className="tile"></div>
-                })}
+            <div id="calendar-container">
+                <div id="days">
+                    {days.map((day, index) => {
+                        return <div className="day"> {day} </div>   
+                    })} 
+                </div>
+                <div className="calendar">
+                    {squares.map((element, index) => {
+                        return <div className="tile"></div>
+                    })}
+                </div>
             </div>
         </div>
     )

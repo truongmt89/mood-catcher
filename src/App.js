@@ -19,6 +19,7 @@ import Calendar from './Components/Calendar';
     const BASE_URL = "http://localhost:5000/mood-catcher";
     return (
       <div className="App">
+        <Title/>
         <Calendar/>
       </div>
     );

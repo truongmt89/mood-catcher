@@ -1,50 +1,27 @@
-#months{
-    width: 1000px;
-    height: 200px;
-    background-color: red;
-    display: grid;
-    grid-template-columns: repeat(12, 80px);
-    align-content: center;
-    justify-content: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 
-.month{
-    width: 70px;
-    height: 70px;
-    background-color: blue;
-    text-align: center;
-}
 
 #calendar-container{
+    color: var(--primary);
     width: 1000px;
     height: auto;
     display: flex;
 }
 
-#days{
-    width: 200px;
-    height: 776px;
-    background-color: blueviolet;
-    display: grid;
-    grid-template-rows: repeat(6, 10px);
-    grid-gap: 90px;
-    justify-content: right;
-}
 
-.day{
-    width: 40px;
-    height: 26px;
-    background-color: chartreuse;
+.days{
+    width: 24px;
+    height: 24px;
     text-align: center;
 }
 
 .calendar{
     width: 400px;
-    height: 776px;
-    background-color: cornflowerblue;
+    height: 900px;
+    background-color: white;
     display: grid;
-    grid-template-columns: repeat(12, 24px);
-    grid-template-rows: repeat(31, 24px);
+    grid-template-columns: repeat(13, 24px);
+    grid-template-rows: repeat(32, 24px);
     grid-gap: 1px;
     justify-content: center;
 }
@@ -52,6 +29,10 @@
 .tile{
     width: 24px;
     height: 24px;
-    background-color: darkkhaki;
-    border: 1px solid red;
+    background-color: #efb6b2;
+    border: 1px solid #4e4e4e;
+}
+
+.tile:hover{
+    transform: scale(1.2,1.2)
 }

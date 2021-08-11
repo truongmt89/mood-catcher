@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Great+Vibes&display=swap');
+
+h4{
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    padding: 25px 0 10px;
+    color: #4e4e4e;
+    text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+}
+
+#moods{
+    width: 200px;
+    height: 200px;
+    color: #4e4e4e;
+    font-size: 50px;
+}
+
+.fa-grin-beam:hover{
+    color: #7B9BE5;
+}
+
+.fa-smile:hover{
+    color: #FCF771;
+}
+
+.fa-grin-stars:hover{
+    color: #33752C;
+}
+
+.fa-frown:hover{
+    color: #9078B1;
+}
+
+.fa-grimace:hover{
+    color: #0D3F7C;
+}
+
+.fa-tired:hover{
+    color: #4B021D;
+}
+
+.fa-angry:hover{
+    color: #A9112B;
+}

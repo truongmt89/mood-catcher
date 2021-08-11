@@ -3,7 +3,7 @@
 
 #calendar-container{
     color: var(--primary);
-    width: 1000px;
+    width: 500px;
     height: auto;
     display: flex;
 }

@@ -24,6 +24,7 @@
     grid-template-rows: repeat(32, 24px);
     grid-gap: 1px;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .tile{

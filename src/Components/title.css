@@ -12,7 +12,7 @@ body{
     color: var(--secondary);
 }
 .App{
-    max-width: 960px;
+    /* max-width: 960px; */
     margin: 0 auto;
 }
 .title h1{
@@ -21,6 +21,7 @@ body{
     letter-spacing: 2px;
     font-weight: normal;
     align-self: flex-start;
+    padding-left: 50px;
 }
 .title h2, .title p{
     text-align: center;

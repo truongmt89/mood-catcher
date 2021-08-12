@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Entries from './Entries';
+import './entries.css'
 
 const EntryList = (props) => {
-    const {entries} = props;
+    const [title, setTitle] = useState("")
+    const handleTitleChange = (e) => {
+        setTitle(e.target.value)
+        console.log(title)
+    }
+    const handleSubmit= () => {
+        
+        fetch("http://localhost:5000/journal_entry",{
+            headers: {"content-type":"application/json"},
+            cors: "no-cors", 
+            method: "POST", 
+            body: JSON.stringify({
+                "journal_month": 4,
+                "journal_day": 5,
+                "journal_title": "title",
+                "journal_text":  "An updated Post!",
+                "journal_mood":  "Happy"
+
+            })
+        })
+    }
+    const {entryData} = props;
     const mapAll = () => {
-        return entries.mapAll((entries) => (
-            <Entries
-            entries={entries}
-            key={entries.journal_entry_id}
-            onSelectEntryCallBack={props.onSelectEntryCallBack}
-            />
-        ))
+        return entryData.map((entry) => {
+        return ( 
+        <div>
+            {entry.journal_title}
+        </div>)
+        })
     }
 
 return (
     <section>
-        {mapAll}
+        {mapAll()}
+        <div id = "entryContainer"> 
+            <textarea id = 'entryBox' onChange={handleTitleChange} value={title} placeholder = "Lets talk about it..."></textarea>
+            <button id = "submit" onClick={()=>handleSubmit()}>submit</button>
+        </div>
     </section>
 );};
 

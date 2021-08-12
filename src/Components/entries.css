@@ -1,0 +1,61 @@
+#entryBox{
+    height: 200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#entryContainer{
+    display: justify;
+    flex-direction: column;
+}
+
+#submit{
+    width: 20%;
+    margin: 30px auto 0;
+}
+
+button{
+    font-family: "Noto Serif";
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 40px;
+    line-height: 1;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 3px solid #efb6b2;
+    background: #fff;
+    color: #efb6b2;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .35s;
+}
+
+button:hover{
+    background: #efb6b2;
+    color: #fff;
+}
+
+button span{
+    opacity: 1;
+    visibility: visible;
+    transition: all .35s;
+}
+
+@media only screen and (max-width: 1100px) {
+        #entryBox{
+            height: 200px;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        #submit{
+            width: 50%;
+            margin: 30px auto 0;
+        }
+    
+}

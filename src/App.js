@@ -11,7 +11,7 @@ const App = () => {
   const [entries, setEntries] = useState([])
   const[color, setColor] = useState('#efb6b2')
   const axios = require('axios')
-  const BASE_URL = "http://localhost:5000/mood-catcher";
+  const BASE_URL = "http://localhost:5000/";
   useEffect(() => {
     axios.get(`${BASE_URL}`)
       .then((response) => {
@@ -44,24 +44,5 @@ const App = () => {
     </div>
   )
 };
-
-// function App() {
-//   const[color, setColor] = useState('#efb6b2')
-//   const BASE_URL = "http://localhost:5000/mood-catcher";
-//   return (
-//     <div className="App">
-//       <Title />
-//       <div id = "appContainer">
-//         <div id = "calendarContainer">
-//           <Calendar tileColor = {color}/>
-//         </div>
-//         <div id = 'moodContainer'>
-//           <Moods colorAction = {setColor}/>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 
 export default App;

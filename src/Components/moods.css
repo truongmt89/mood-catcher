@@ -3,22 +3,33 @@
 h4{
     font-family: 'Amatic SC', cursive;
     font-size: 25px;
-    /* padding: 15px 10 2.5px; */
     color: #4e4e4e;
     text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+    padding-top: 100px;
 }
 
 #moods{
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 140px;
     color: #4e4e4e;
-    font-size: 35px;
+    font-size: 40px;
     display: flex;
     flex-direction: row;
     margin: 0 auto;
+    text-align: center;
+}
+
+.moodText{
+    font-size: 0;
+    color: transparent;
 }
 
 .fa-grin-beam:hover{
+    color: #7B9BE5;
+}
+
+.fa-grin-beam:hover + p{
+    font-size: 24px;
     color: #7B9BE5;
 }
 
@@ -26,7 +37,17 @@ h4{
     color: #FCF771;
 }
 
+.fa-smile:hover + p{
+    font-size: 24px;
+    color: #FCF771;
+}
+
 .fa-grin-stars:hover{
+    color: #33752C;
+}
+
+.fa-grin-stars:hover + p{
+    font-size: 24px;
     color: #33752C;
 }
 
@@ -34,7 +55,17 @@ h4{
     color: #9078B1;
 }
 
+.fa-frown:hover + p{
+    font-size: 24px;
+    color: #9078B1;
+}
+
 .fa-grimace:hover{
+    color: #0D3F7C;
+}
+
+.fa-grimace:hover + p{
+    font-size: 24px;
     color: #0D3F7C;
 }
 
@@ -42,6 +73,16 @@ h4{
     color: #4B021D;
 }
 
+.fa-tired:hover + p{
+    font-size: 24px;
+    color: #4B021D;
+}
+
 .fa-angry:hover{
+    color: #A9112B;
+}
+
+.fa-angry:hover + p{
+    font-size: 24px;
     color: #A9112B;
 }

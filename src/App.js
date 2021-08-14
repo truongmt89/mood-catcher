@@ -5,12 +5,12 @@ import Entries from './Components/EntryList';
 import axios from "axios";
 import Calendar from './Components/Calendar';
 import Moods from './Components/Moods';
+import Welcome from './Components/Welcome'
 import './App.css'
 
 const App = () => {
   const [entries, setEntries] = useState([])
   const[color, setColor] = useState('#efb6b2')
-  const axios = require('axios')
   const BASE_URL = "http://localhost:5000/";
   useEffect(() => {
     axios.get(`${BASE_URL}`)
@@ -31,6 +31,7 @@ const App = () => {
   }
   return (
     <div className="App">
+      <Welcome />
       <Title />
       <div id="appContainer">
         <div id="calendarContainer">

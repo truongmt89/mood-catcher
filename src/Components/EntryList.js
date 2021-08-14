@@ -12,7 +12,6 @@ const EntryList = (props) => {
         
         fetch("http://localhost:5000/journal_entry",{
             headers: {"content-type":"application/json"},
-            cors: "no-cors", 
             method: "POST", 
             body: JSON.stringify({
                 "journal_month": 4,

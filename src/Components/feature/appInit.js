@@ -8,6 +8,9 @@ const appInit = createSlice({
         mood:0,
         journalEntryId:0,
         text:"",
+        calendarTile:[],
+        currentMood:0,
+        currentText:""
     },
     reducers:{
         handleTextChange:(state,action) =>{
@@ -18,15 +21,27 @@ const appInit = createSlice({
         },
         handleJournalEntryIdChange: (state, action) =>{
             state.journalEntryId = action.payload
+        },
+        handleCalendarTileChange: (state,action) =>{
+            state.calendarTile = action.payload
+        },
+        handleCurrentMoodChange: (state, action) =>{
+            state.currentMood = action.payload
+        },
+        handleCurrentTextChange: (state, action) =>{
+            state.currentText = action.payload
         }
-    }
+    } 
 })
 
 
 export const {
     handleTextChange,
     handleMoodChange,
-    handleJournalEntryIdChange
+    handleJournalEntryIdChange,
+    handleCalendarTileChange,
+    handleCurrentMoodChange,
+    handleCurrentTextChange
 } = appInit.actions;
 
 

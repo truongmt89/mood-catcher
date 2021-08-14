@@ -1,6 +1,11 @@
-1) we want to add to the redux store a new array/list that will contain all the calendar_ids that exist (that we got from /journal_entry/calendar_ids)
-2) In App.js or Calendar.js we want to make the axios request that will grab our data and save it in the redux store using our mutation function
-3) Once we have that data in our store, we can access it from Calendar.js and loop over it and based on the values in the array decide whether then box should be filled in with the correct color
+1) we want to add to the redux store a new array/list that will contain all the calendar_ids that exist (that we got 
+from /journal_entry/calendar_ids)
+
+2) In App.js or Calendar.js we want to make the axios request that will grab our data and save it in the redux store 
+using our mutation function
+
+3) Once we have that data in our store, we can access it from Calendar.js and loop over it and based on the values 
+in the array decide whether then box should be filled in with the correct color
 
 
 OR if we don't want to do as much work
@@ -25,3 +30,15 @@ a) iterate over all of our entries and get which days exist and color in those s
 b) once someone clicks on a square if
 b1) it is a dark square (has data) we should show what's in there in the text area
 b2) it is light (does not have data) it should show an empty text area
+
+NEXT STEPS BELOW******************************************************************************************************************
+These are the next steps needed to get the data to render to the screen:
+
+Check data to see if our data that is coming from backend is compared to our local data -- If true render tile components that would pass
+in our mood data and text data with props
+(That data allow us to render all of our tiles with different colors)
+
+Once the tile colors change - heading in the right direction!
+The tile needs to have a toggle functionality to toggle information that is coming in. 
+
+Next pass the data in to Mood and Text 

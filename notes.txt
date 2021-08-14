@@ -1,0 +1,27 @@
+1) we want to add to the redux store a new array/list that will contain all the calendar_ids that exist (that we got from /journal_entry/calendar_ids)
+2) In App.js or Calendar.js we want to make the axios request that will grab our data and save it in the redux store using our mutation function
+3) Once we have that data in our store, we can access it from Calendar.js and loop over it and based on the values in the array decide whether then box should be filled in with the correct color
+
+
+OR if we don't want to do as much work
+
+I don't think that we even need to use redux for this if we don't want.
+We can just make an axios call in Calendar.js and directly use that state maybe.
+
+
+
+
+Once that's finished
+we can work on the feature where if we click on a day that is in the dark purple color (we know it has stuff)
+We should make a eventhandler for the onclick for calendar where it will go and grab our entry info (text, etc.)
+
+
+GRANTED we already have code in the App.js that has already grabbed all of our entries anyways so maybe we just use that 
+OR we should delete that axios stuff in App.js and just worry about our future stuff
+
+No matter where we get our data from
+we should just
+a) iterate over all of our entries and get which days exist and color in those squares
+b) once someone clicks on a square if
+b1) it is a dark square (has data) we should show what's in there in the text area
+b2) it is light (does not have data) it should show an empty text area

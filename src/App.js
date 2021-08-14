@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Title from './Components/Title';
 import EntryList from './Components/EntryList';
-import Entries from './Components/EntryList';
 import axios from "axios";
 import Calendar from './Components/Calendar';
 import Moods from './Components/Moods';
@@ -11,17 +10,17 @@ const App = () => {
   const [entries, setEntries] = useState([])
   const[color, setColor] = useState('#efb6b2')
   const axios = require('axios')
-  const BASE_URL = "http://localhost:5000/";
+  // const BASE_URL = "http://localhost:5000/journal_entry";
   useEffect(() => {
-    axios.get(`${BASE_URL}`)
-      .then((response) => {
-        setEntries(response.data)
-      })
+    axios.get("http://localhost:5000/journal_entry")
+    .then(function (response) {
+      setEntries(response.data)
+    })
       .catch((err) => console.log(err));
   },
     []
   )
-
+  console.log(entries,'this is our entries')
   const removeEntry = index => {
     setEntries(
       entries.filter((entry, i) => {
@@ -38,7 +37,7 @@ const App = () => {
         </div>
         <div id='moodContainer'>
           <Moods colorAction={setColor} />
-          <Entries entryData={entries} removeEntry={removeEntry} />
+          <EntryList entryData={entries} removeEntry={removeEntry} />
         </div>
       </div>
     </div>

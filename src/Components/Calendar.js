@@ -1,7 +1,8 @@
 import React from 'react';
 import './calendar.css';
 import PropTypes from 'prop-types';
-
+import {handleJournalEntryIdChange} from './feature/appInit'
+import { useDispatch } from 'react-redux'
 // function daysInMonth(month) {
 //     let year = (new Date()).getFullYear();
 //     return new Date(year, month, 0).getDate();
@@ -37,13 +38,15 @@ import PropTypes from 'prop-types';
     const Calendar = (props) => {
         let counter2 = 0;
         let tileCounter = 0
-    
-        function getClass(event){
+    let dispatch = useDispatch()
+        function handleTileClick(event){
+            dispatch(handleJournalEntryIdChange(event.target.id))
             let oldSelect = document.getElementsByClassName("selected")
             if(oldSelect.length !== 0){
                 oldSelect[0].classList.remove("selected")
             }
             event.target.classList.add("selected")
+           
         }
     
         return (
@@ -59,7 +62,7 @@ import PropTypes from 'prop-types';
                                 return <div>{counter2}</div>//gives side numbers
                             }
                             tileCounter += 1 //gives tile id
-                            return <div id = {tileCounter} className="tile" style = {{backgroundColor: '#efb6b2'}} onClick = {getClass}></div>
+                            return <div id = {tileCounter} className="tile" style = {{backgroundColor: '#efb6b2'}} onClick = {handleTileClick}></div>
                             //^^generates the rest of the tiles that arent numbers on the side or months
                         })}
                     </div>

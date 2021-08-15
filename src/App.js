@@ -4,6 +4,7 @@ import Title from './Components/Title';
 import EntryList from './Components/EntryList';
 import Calendar from './Components/Calendar';
 import Moods from './Components/Moods';
+import Welcome from './Components/Welcome'
 import './App.css'
 import Homepage from "./Homepage";
 import Login from "./Login";
@@ -17,6 +18,7 @@ const App = () => {
   const[color, setColor] = useState('#efb6b2')
   const dispatch = useDispatch();
  
+  const BASE_URL = "http://localhost:5000/";
   useEffect(() => {
     axios.get("http://localhost:5000/journal_entry")
     .then(function (response) {
@@ -51,6 +53,7 @@ const App = () => {
           {user.number}: {user.username}
           </div> )
         })}
+      <Welcome />
       <Title />
       <div id="appContainer">
         <div id="calendarContainer">

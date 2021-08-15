@@ -1,5 +1,5 @@
 import React from 'react';
-import './moods.css'
+import './moods.css';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGrinBeam, faSmile, faGrinStars, faFrown, faGrimace, faTired, faAngry } from '@fortawesome/free-solid-svg-icons'
@@ -50,7 +50,7 @@ const Moods = (props) => {
     }
 
     return(
-        <div>        
+        <div>   
         <div className="hello">
         <h4>Hello BEAUTIFUL!
             Let me see that gorgeous face!

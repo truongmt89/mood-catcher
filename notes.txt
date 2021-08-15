@@ -1,19 +1,15 @@
 1) we want to add to the redux store a new array/list that will contain all the calendar_ids that exist (that we got 
-from /journal_entry/calendar_ids)
+from /journal_entry/calendar_ids) ---- Decision is to fetch everything first (use get all route)
 
 2) In App.js or Calendar.js we want to make the axios request that will grab our data and save it in the redux store 
-using our mutation function
+using our mutation function -- solution = store what you get back from backend and store in front end as is (entire calendar store) when render the 
+grip do a map on the store items that we saved and then render the grid . 
 
 3) Once we have that data in our store, we can access it from Calendar.js and loop over it and based on the values 
 in the array decide whether then box should be filled in with the correct color
 
 
 OR if we don't want to do as much work
-
-I don't think that we even need to use redux for this if we don't want.
-We can just make an axios call in Calendar.js and directly use that state maybe.
-
-
 
 
 Once that's finished
@@ -37,6 +33,7 @@ These are the next steps needed to get the data to render to the screen:
 Check data to see if our data that is coming from backend is compared to our local data -- If true render tile components that would pass
 in our mood data and text data with props
 (That data allow us to render all of our tiles with different colors)
+
 
 Once the tile colors change - heading in the right direction!
 The tile needs to have a toggle functionality to toggle information that is coming in. 

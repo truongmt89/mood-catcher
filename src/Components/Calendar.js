@@ -25,8 +25,13 @@ import { useDispatch,useSelector } from 'react-redux'
                 oldSelect[0].classList.remove("selected")
             }
             event.target.classList.add("selected")
-           
         }
+
+        setTimeout(() =>{
+            if(document.getElementById('appContainer')){
+                document.getElementById('appContainer').style.opacity = "1"
+            }
+        },5500)
     
         return (
             <div>
@@ -43,13 +48,13 @@ import { useDispatch,useSelector } from 'react-redux'
 
                             tileCounter += 1 //gives tile id
                             calendarTileData.map(index =>{
-                               if(index.calendar_id === tileCounter){
+                                if(index.calendar_id === tileCounter){
                                   // component will be 
                                   // pass 
                                   // props.mood = index.mood 
                                   // props.text = index/journal_text
                                   // <TileComponent mood={index.mood} text={index.journal_text} />
-                               }
+                                }
                             })
                             // console.log(tileCounter,'this is our tileCounter')
                             // loop through our data coming in === calendarTileData

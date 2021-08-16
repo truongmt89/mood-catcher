@@ -17,7 +17,7 @@ import { useDispatch,useSelector } from 'react-redux'
         let tileCounter = 0
         const calendarTileData = useSelector((state) => state.appInit.calendarTile); 
 
-    let dispatch = useDispatch()
+        let dispatch = useDispatch();
         function handleTileClick(event){
             dispatch(handleJournalEntryIdChange(event.target.id))
             let oldSelect = document.getElementsByClassName("selected")
@@ -40,6 +40,7 @@ import { useDispatch,useSelector } from 'react-redux'
                                 // console.log(counter2)
                                 return <div>{counter2}</div>//gives side numbers
                             }
+
                             tileCounter += 1 //gives tile id
                             calendarTileData.map(index =>{
                                if(index.calendar_id === tileCounter){

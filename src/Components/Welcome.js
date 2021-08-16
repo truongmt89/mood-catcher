@@ -19,8 +19,12 @@ const Welcome = (props) => {
         getQuote()
     }
     setTimeout(() =>{
-        document.getElementById('welcomeContainer').style.display = "none"
+        document.getElementById('welcomeContainer').style.opacity = "0"
     },4000)
+
+    setTimeout(() =>{
+        document.getElementById('welcomeContainer').style.display = "none"
+    },4500)
 
     return (
         <div id = "welcomeContainer">

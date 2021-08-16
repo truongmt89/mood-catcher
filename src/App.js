@@ -5,6 +5,7 @@ import EntryList from './Components/EntryList';
 import Calendar from './Components/Calendar';
 import Moods from './Components/Moods';
 import Welcome from './Components/Welcome'
+import dc from './Components/dc2.png'; 
 import './App.css'
 import Homepage from "./Homepage";
 import Login from "./Login";
@@ -29,7 +30,12 @@ const App = () => {
       .catch((err) => console.log(err));
   }, [])
 
-  console.log(entries,'these are our entries')
+  setTimeout(() =>{
+    document.getElementById('appContainer').style.opacity = "1"
+    document.getElementById('moodContainer').style.opacity = "1"
+    document.getElementsByClassName('title')[0].style.opacity = "1"
+},5500)
+
   const removeEntry = index => {
     setEntries(
       entries.filter((entry, i) => {
@@ -44,6 +50,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <img id = "dreamCatcher" src = {dc}/>
       { !loggedIn && <Login updateLoggedIn={updateLoggedIn}/>}
       { loggedIn && <Homepage/>}
       { loggedIn && <button onClick={updateLoggedIn}>Log Out</button>}
@@ -53,9 +60,10 @@ const App = () => {
           {user.number}: {user.username}
           </div> )
         })}
+       
       <Welcome />
-      <Title />
-      <div id="appContainer">
+      <Title /> 
+        <div id="appContainer">
         <div id="calendarContainer">
           <Calendar tileColor={color} />
         </div>

@@ -19,8 +19,7 @@ const Moods = (props) => {
         console.log(selected[0])
         if(selected.length){
             selected[0].style.backgroundColor = color
-        }
-        
+        }        
     }
     
     function grabMood(event){

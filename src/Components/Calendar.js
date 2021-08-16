@@ -1,34 +1,12 @@
 import React from 'react';
 import './calendar.css';
 import PropTypes from 'prop-types';
+import {handleJournalEntryIdChange} from './feature/appInit'
+import { useDispatch,useSelector } from 'react-redux'
 
-// function daysInMonth(month) {
-//     let year = (new Date()).getFullYear();
-//     return new Date(year, month, 0).getDate();
-//     }
     
     const months = ["","J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
-    // const grid = {};
-    // for (let i = 0; i < months.length; i++) {
-    //     grid[months[i]] = daysInMonth(i+1);
-    // }
-    // console.log(grid)
 
-    // let days = new Array(7).fill(0);
-    // let counter = 0;
-    // days = days.map((element, index) => {
-    //     if(index === 0 ){
-    //         counter += 1
-    //         return counter
-    //     }else if(index === 1){
-    //         counter += 4
-    //         return counter
-    //     }else{
-    //         counter += 5
-    //         return counter
-    //     }
-    // })
-    // console.log(days)
     const squares = []
     for(let i = 0; i < 416; i++){
         squares.push(i)
@@ -37,20 +15,17 @@ import PropTypes from 'prop-types';
     const Calendar = (props) => {
         let counter2 = 0;
         let tileCounter = 0
+        const calendarTileData = useSelector((state) => state.appInit.calendarTile); 
 
-        // functionx(){
-        //     axios api call{
-        //         set color var
-        //         set journal var
-        //     }
-        // }
-    
-        function getClass(event){
+        let dispatch = useDispatch();
+        function handleTileClick(event){
+            dispatch(handleJournalEntryIdChange(event.target.id))
             let oldSelect = document.getElementsByClassName("selected")
             if(oldSelect.length !== 0){
                 oldSelect[0].classList.remove("selected")
             }
             event.target.classList.add("selected")
+           
         }
     
         return (
@@ -65,8 +40,23 @@ import PropTypes from 'prop-types';
                                 // console.log(counter2)
                                 return <div>{counter2}</div>//gives side numbers
                             }
-                            tileCounter += 1 //gives tile id// 
-                            return <div id = {tileCounter} className="tile" style = {{backgroundColor: '#efb6b2'}} onClick = {getClass}></div>
+
+                            tileCounter += 1 //gives tile id
+                            calendarTileData.map(index =>{
+                               if(index.calendar_id === tileCounter){
+                                  // component will be 
+                                  // pass 
+                                  // props.mood = index.mood 
+                                  // props.text = index/journal_text
+                                  // <TileComponent mood={index.mood} text={index.journal_text} />
+                               }
+                            })
+                            // console.log(tileCounter,'this is our tileCounter')
+                            // loop through our data coming in === calendarTileData
+                            // if statement to check for the tileCounter ===  calendarTileData 
+                            // if true  Render tileComponent within and pass along with mood and text value 
+                            // else  return <div id = {tileCounter} className="tile" style = {{backgroundColor: '#efb6b2'}} onClick = {handleTileClick}></div>
+                            return <div id = {tileCounter} className="tile" style = {{backgroundColor: '#efb6b2'}} onClick = {handleTileClick}></div>
                             //^^generates the rest of the tiles that arent numbers on the side or months
                         })}
                     </div>

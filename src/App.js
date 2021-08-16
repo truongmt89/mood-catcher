@@ -6,6 +6,7 @@ import axios from "axios";
 import Calendar from './Components/Calendar';
 import Moods from './Components/Moods';
 import Welcome from './Components/Welcome'
+import dc from './Components/dc2.png'; 
 import './App.css'
 
 const App = () => {
@@ -22,6 +23,13 @@ const App = () => {
     []
   )
 
+  setTimeout(() =>{
+    document.getElementById('appContainer').style.opacity = "1"
+    document.getElementById('moodContainer').style.opacity = "1"
+    document.getElementsByClassName('title')[0].style.opacity = "1"
+},5500)
+
+
   const removeEntry = index => {
     setEntries(
       entries.filter((entry, i) => {
@@ -29,11 +37,14 @@ const App = () => {
       })
     )
   }
+
+  //https://imgur.com/PLnFkdP
   return (
     <div className="App">
+      <img id = "dreamCatcher" src = {dc}/>
       <Welcome />
-      <Title />
-      <div id="appContainer">
+      <Title /> 
+        <div id="appContainer">
         <div id="calendarContainer">
           <Calendar tileColor={color} />
         </div>

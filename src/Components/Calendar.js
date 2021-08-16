@@ -37,6 +37,13 @@ import PropTypes from 'prop-types';
     const Calendar = (props) => {
         let counter2 = 0;
         let tileCounter = 0
+
+        // functionx(){
+        //     axios api call{
+        //         set color var
+        //         set journal var
+        //     }
+        // }
     
         function getClass(event){
             let oldSelect = document.getElementsByClassName("selected")
@@ -58,7 +65,7 @@ import PropTypes from 'prop-types';
                                 // console.log(counter2)
                                 return <div>{counter2}</div>//gives side numbers
                             }
-                            tileCounter += 1 //gives tile id
+                            tileCounter += 1 //gives tile id// 
                             return <div id = {tileCounter} className="tile" style = {{backgroundColor: '#efb6b2'}} onClick = {getClass}></div>
                             //^^generates the rest of the tiles that arent numbers on the side or months
                         })}

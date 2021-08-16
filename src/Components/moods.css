@@ -25,64 +25,64 @@ h4{
 }
 
 .fa-grin-beam:hover{
-    color: #7B9BE5;
+    color: #E9CC7F;
 }
 
 .fa-grin-beam:hover + p{
     font-size: 24px;
-    color: #7B9BE5;
+    color: #E9CC7F;
 }
 
 .fa-smile:hover{
-    color: #FCF771;
+    color: #C4DFF5;
 }
 
 .fa-smile:hover + p{
     font-size: 24px;
-    color: #FCF771;
+    color: #C4DFF5;
 }
 
 .fa-grin-stars:hover{
-    color: #33752C;
+    color: #9292BA;
 }
 
 .fa-grin-stars:hover + p{
     font-size: 24px;
-    color: #33752C;
+    color: #9292BA;
 }
 
 .fa-frown:hover{
-    color: #9078B1;
+    color: #CEBECC;
 }
 
 .fa-frown:hover + p{
     font-size: 24px;
-    color: #9078B1;
+    color: #CEBECC;
 }
 
 .fa-grimace:hover{
-    color: #0D3F7C;
+    color: #3085BB;
 }
 
 .fa-grimace:hover + p{
     font-size: 24px;
-    color: #0D3F7C;
+    color: #3085BB;
 }
 
 .fa-tired:hover{
-    color: #4B021D;
+    color: #706B8F;
 }
 
 .fa-tired:hover + p{
     font-size: 24px;
-    color: #4B021D;
+    color: #706B8F;
 }
 
 .fa-angry:hover{
-    color: #A9112B;
+    color: #80B5B3;
 }
 
 .fa-angry:hover + p{
     font-size: 24px;
-    color: #A9112B;
+    color: #80B5B3;
 }

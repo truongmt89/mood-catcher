@@ -12,8 +12,7 @@ const Moods = (props) => {
         console.log(selected[0])
         if(selected.length){
             selected[0].style.backgroundColor = color
-        }
-        
+        }        
     }
     
 
@@ -25,31 +24,31 @@ const Moods = (props) => {
         </h4>
         </div>
             <div  id = 'moods'>
-                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#7B9BE5")}>
+                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#E9CC7F")}>
                     <FontAwesomeIcon icon={faGrinBeam} className="fa-grin-beam" />
                     <p className = "moodText">excited</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#FCF771")}>
+                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#C4DFF5")}>
                     <FontAwesomeIcon icon={faSmile} className="fa-smile" />
                     <p className = "moodText">happy</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#33752C")}>
+                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#9292BA")}>
                     <FontAwesomeIcon icon={faGrinStars} className="fa-grin-stars" />
                     <p className = "moodText">productive</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#9078B1")}>
+                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#CEBECC")}>
                     <FontAwesomeIcon icon={faFrown} className="fa-frown" />
                     <p className = "moodText">sad</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#0D3F7C")}>
+                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#3085BB")}>
                     <FontAwesomeIcon icon={faGrimace} className="fa-grimace" />
                     <p className = "moodText">anxious</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#4B021D")}>
+                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#706B8F")}>
                     <FontAwesomeIcon icon={faTired} className="fa-tired" />
                     <p className = "moodText">stressed</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#A9112B")}>
+                <div style = {{width: '40px', height: '40px'}}   onClick = {() => setColor("#80B5B3")}>
                     <FontAwesomeIcon icon={faAngry} className="fa-angry" />
                     <p className = "moodText">angry</p>
                 </div>

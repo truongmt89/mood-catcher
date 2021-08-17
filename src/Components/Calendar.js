@@ -50,7 +50,18 @@ import EntryList from './EntryList'
                             }
 
                             tileCounter += 1 //gives tile id
-                           
+
+
+                            calendarTileData.map(index =>{
+                                if(index.calendar_id === tileCounter){
+                                  // component will be 
+                                  // pass 
+                                  // props.mood = index.mood 
+                                  // props.text = index/journal_text
+                                  // <TileComponent mood={index.mood} text={index.journal_text} />
+                                }
+                            })
+
                             // console.log(tileCounter,'this is our tileCounter')
                             // loop through our data coming in === calendarTileData
                             // if statement to check for the tileCounter ===  calendarTileData 

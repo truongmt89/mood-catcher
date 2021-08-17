@@ -4,9 +4,9 @@ import appInit from './feature/appInit.js'
 
 
 
- const reducer = combineReducers({
+const reducer = combineReducers({
     appInit:appInit
- })
+})
 
 
 

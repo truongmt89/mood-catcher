@@ -19,11 +19,17 @@ const Welcome = (props) => {
         getQuote()
     }
     setTimeout(() =>{
-        document.getElementById('welcomeContainer').style.opacity = "0"
+        if(document.getElementById('welcomeContainer')){
+            document.getElementById('welcomeContainer').style.opacity = "0"
+        }
+        
     },4000)
 
     setTimeout(() =>{
-        document.getElementById('welcomeContainer').style.display = "none"
+        if(document.getElementById('welcomeContainer')){
+            document.getElementById('welcomeContainer').style.display = "none"
+        }
+        
     },4500)
 
     return (

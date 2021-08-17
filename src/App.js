@@ -47,7 +47,7 @@ const App = () => {
     )
   }
 
-  let updateLoggedIn = () => {
+  const updateLoggedIn = () => {
     setLoggedIn(!loggedIn)
   }
 
@@ -60,11 +60,26 @@ const App = () => {
       { loggedIn && <Homepage/>}
       { loggedIn && <button onClick={updateLoggedIn}>Log Out</button>}
       { data && data.map((user, i) => {
+        console.log(user,'this is our ')
         return (
           <div key={i}>
           {user.number}: {user.username}
           </div> )
         })} */}
+
+       
+      <Welcome />
+      <Title /> 
+        <div id="appContainer">
+        <div id="calendarContainer">
+          <Calendar tileColor={color} />
+        </div>
+        <div id='moodContainer'>
+          <Moods colorAction={setColor} />
+          <EntryList entryData={entries} removeEntry={removeEntry} />
+        </div>
+      </div>
+
         {}
         <Switch>
           <Route path = "/login">
@@ -85,6 +100,7 @@ const App = () => {
             </div>
           </Route>
       </Switch>
+
       
     </div>
     </Router>

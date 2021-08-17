@@ -35,33 +35,21 @@ const EntryList = (props) => {
           });
 
     }
-        // fetch("http://localhost:5000/journal_entry",{
-        //     headers: {"content-type":"application/json"},
-        //     cors: "no-cors", 
-        //     method: "POST", 
-        //     body: JSON.stringify({
-        //         "journal_month": 4,
-        //         "journal_day": 5,
-        //         "journal_title": "title",
-        //         "journal_text":  "An updated Post!",
-        //         "journal_mood":  "Happy"
-
-        //     })
-        // })
+       
     // }
-    const {entryData} = props;
-    const mapAll = () => {
-        return entryData.map((entry) => {
-        return ( 
-        <div>
-            {entry.journal_title}
-        </div>)
-        })
-    }
+    // const {entryData} = props;
+    // const mapAll = () => {
+    //     return entryData.map((entry) => {
+    //     return ( 
+    //     <div>
+    //         {entry.journal_title}
+    //     </div>)
+    //     })
+    // }
 
 return (
     <section>
-        {mapAll()}
+        {/* {mapAll()} */}
         <div id = "entryContainer"> 
             <textarea id = 'entryBox' onChange={handleTitleChange} value={text} placeholder = "Lets talk about it..."></textarea>
             <button id = "submit" onClick={()=>handleSubmit()}>submit</button>

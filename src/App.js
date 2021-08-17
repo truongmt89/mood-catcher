@@ -17,6 +17,7 @@ const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [calendarData, setCalendarData] = useState([]);
   const [entries, setEntries] = useState([])
+  const [currID, setID] = useState(0)
   const[color, setColor] = useState('#efb6b2')
   const dispatch = useDispatch();
 
@@ -28,6 +29,7 @@ const App = () => {
       // setCalendarData(response.data)
       // setData(response.data.users)
       setEntries(response.data)
+      console.log(response.data)
     })
       .catch((err) => console.log(err));
   }, [])
@@ -48,24 +50,20 @@ const App = () => {
 
   function handleTileClick(event) {
             // dispatch(handleJournalEntryIdChange(event.target.id))
-            let oldSelect = document.getElementsByClassName("selected")
-            if(oldSelect.length !== 0){
-                oldSelect[0].classList.remove("selected")
-            }
-            event.target.classList.add("selected")
+            
         }
 
 
   //callback function from tile 
   const getTileData = (id) => {
-  
     console.log(id)
+    setID(id)
 
     // in here will eventually live a modal component that pops up to either
     // display journal entry or populate a journal entry  
     // likely using conditional rendering
   }
-
+  console.log(entries)
   return (
     <Router>
     <div className="App">
@@ -109,7 +107,7 @@ const App = () => {
               </div>
               <div id='moodContainer'>
                 <Moods colorAction={setColor} />
-                <EntryList entryData={entries} removeEntry={removeEntry} />
+                <EntryList id = {currID} entryData={entries} removeEntry={removeEntry} />
               </div>
             </div>
           </Route>

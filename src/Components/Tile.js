@@ -24,14 +24,20 @@ function getColorFromMood(mood){
 
 const Tile = (props) => {
 
-    const handleTileClick = (id) => {
+    const handleTileClick = (event,id) => {
         console.log(id)
         props.getTileData(id)
         console.log(props.tileMood)
+        let oldSelect = document.getElementsByClassName("selected")
+            if(oldSelect.length !== 0){
+                oldSelect[0].classList.remove("selected")
+            }
+            event.target.classList.add("selected")
     }
 
+
     return (
-    <div key={props.element} id={props.tileCounter} className="tile" style = {{backgroundColor: getColorFromMood(props.tileMood)}} onClick = {() => handleTileClick(props.tileCounter)}> </div>)
+    <div key={props.element} id={props.tileCounter} className="tile" style = {{backgroundColor: getColorFromMood(props.tileMood)}} onClick = {(event) => handleTileClick(event,props.tileCounter)}> </div>)
     }
 
 

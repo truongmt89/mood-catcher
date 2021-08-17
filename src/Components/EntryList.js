@@ -10,6 +10,7 @@ const EntryList = (props) => {
     // const [entryId,setEntryID] = useState(0);
     // const [mood,setMood] = useState(0)
     const dispatch = useDispatch();
+    const [currEntry, setcurrEntry] = useState(null)
     const journalId = useSelector((state) => state.appInit.journalEntryId); 
     const journalText = useSelector((state) => state.appInit.text); 
     const journalMood = useSelector((state) => state.appInit.mood);
@@ -20,6 +21,7 @@ const EntryList = (props) => {
     }
     
     const handleSubmit= () => {
+        console.log(props.entryData)
        console.log(journalId)
        console.log(journalText)
        console.log(journalMood)
@@ -35,6 +37,22 @@ const EntryList = (props) => {
           });
 
     }
+
+    let textAreaValue = ""
+    useEffect(() => {
+        if(props.entryData.length === 0){
+            return; 
+        }else{
+            let text = props.entryData.find((obj) => {
+                return   obj.calendar_id === props.id
+                })
+                if (text !== undefined) {
+                    setText(text.journal_text)
+                }
+            
+        }
+        
+    }, [props.id, props.entryData])
        
     // }
     // const {entryData} = props;
@@ -47,11 +65,11 @@ const EntryList = (props) => {
     //     })
     // }
 
-return (
+return  (
     <section>
         {/* {mapAll()} */}
         <div id = "entryContainer"> 
-            <textarea id = 'entryBox' onChange={handleTitleChange} value={text} placeholder = "Lets talk about it..."></textarea>
+            <textarea id = 'entryBox' onChange={handleTitleChange} value = {text}></textarea>
             <button id = "submit" onClick={()=>handleSubmit()}>submit</button>
         </div>
     </section>

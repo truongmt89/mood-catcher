@@ -3,7 +3,8 @@ import './calendar.css';
 import PropTypes from 'prop-types';
 import {handleJournalEntryIdChange} from './feature/appInit'
 import { useDispatch,useSelector } from 'react-redux'
-
+import Tile from './Tile';
+import EntryList from './EntryList'
     
     const months = ["","J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"];
 
@@ -25,38 +26,37 @@ import { useDispatch,useSelector } from 'react-redux'
                 oldSelect[0].classList.remove("selected")
             }
             event.target.classList.add("selected")
-           
         }
+
+        setTimeout(() =>{
+            if(document.getElementById('appContainer')){
+                document.getElementById('appContainer').style.opacity = "1"
+            }
+        },5500)
     
         return (
             <div>
                 <div id="calendar-container">
+                    <EntryList/>
                     <div className="calendar">
                         {squares.map((element, index) => {
+                            console.log(index,'check our data')
                             if(index < 13){
-                                return <div className = "days">{months[index]}</div>//gives months at the top
+                                return <div key={element} className = "days">{months[index]}</div>//gives months at the top
                             }else if(index%13 === 0){
                                 counter2 += 1
                                 // console.log(counter2)
-                                return <div>{counter2}</div>//gives side numbers
+                                return <div key={element}>{counter2}</div>//gives side numbers
                             }
 
                             tileCounter += 1 //gives tile id
-                            calendarTileData.map(index =>{
-                               if(index.calendar_id === tileCounter){
-                                  // component will be 
-                                  // pass 
-                                  // props.mood = index.mood 
-                                  // props.text = index/journal_text
-                                  // <TileComponent mood={index.mood} text={index.journal_text} />
-                               }
-                            })
+                           
                             // console.log(tileCounter,'this is our tileCounter')
                             // loop through our data coming in === calendarTileData
                             // if statement to check for the tileCounter ===  calendarTileData 
                             // if true  Render tileComponent within and pass along with mood and text value 
                             // else  return <div id = {tileCounter} className="tile" style = {{backgroundColor: '#efb6b2'}} onClick = {handleTileClick}></div>
-                            return <div id = {tileCounter} className="tile" style = {{backgroundColor: '#efb6b2'}} onClick = {handleTileClick}></div>
+                            return <Tile element={element} tileCounter={tileCounter} handleTileClick={handleTileClick} />
                             //^^generates the rest of the tiles that arent numbers on the side or months
                         })}
                     </div>

@@ -44,22 +44,23 @@ const App = () => {
     )
   }
 
-  let updateLoggedIn = () => {
+  const updateLoggedIn = () => {
     setLoggedIn(!loggedIn)
   }
 
   return (
     <div className="App">
       <img id = "dreamCatcher" src = {dc}/>
-      { !loggedIn && <Login updateLoggedIn={updateLoggedIn}/>}
+      {/* { !loggedIn && <Login updateLoggedIn={updateLoggedIn}/>}
       { loggedIn && <Homepage/>}
       { loggedIn && <button onClick={updateLoggedIn}>Log Out</button>}
       { data && data.map((user, i) => {
+        console.log(user,'this is our ')
         return (
           <div key={i}>
           {user.number}: {user.username}
           </div> )
-        })}
+        })} */}
        
       <Welcome />
       <Title /> 

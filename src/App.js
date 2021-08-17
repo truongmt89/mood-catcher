@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import {BrowserRouter as Router,Switch,Route,Link,Redirect} from "react-router-dom";
 import axios from 'axios'
 import Title from './Components/Title';
 import EntryList from './Components/EntryList';
@@ -21,7 +15,7 @@ import {handleCalendarTileChange} from './Components/feature/appInit'
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [data, setData] = useState([]);
+  const [calendarData, setCalendarData] = useState([]);
   const [entries, setEntries] = useState([])
   const[color, setColor] = useState('#efb6b2')
   const dispatch = useDispatch();
@@ -30,8 +24,9 @@ const App = () => {
   useEffect(() => {
     axios.get("http://localhost:5000/journal_entry")
     .then(function (response) {
-      dispatch(handleCalendarTileChange(response.data))
-      setData(response.data.users)
+      // dispatch(handleCalendarTileChange(response.data))
+      // setCalendarData(response.data)
+      // setData(response.data.users)
       setEntries(response.data)
     })
       .catch((err) => console.log(err));
@@ -51,6 +46,25 @@ const App = () => {
     setLoggedIn(!loggedIn)
   }
 
+  function handleTileClick(event) {
+            // dispatch(handleJournalEntryIdChange(event.target.id))
+            let oldSelect = document.getElementsByClassName("selected")
+            if(oldSelect.length !== 0){
+                oldSelect[0].classList.remove("selected")
+            }
+            event.target.classList.add("selected")
+        }
+
+
+  //callback function from tile 
+  const getTileData = (id) => {
+  
+    console.log(id)
+
+    // in here will eventually live a modal component that pops up to either
+    // display journal entry or populate a journal entry  
+    // likely using conditional rendering
+  }
 
   return (
     <Router>
@@ -68,17 +82,17 @@ const App = () => {
         })} */}
 
        
-      <Welcome />
+      {/* <Welcome />
       <Title /> 
         <div id="appContainer">
         <div id="calendarContainer">
-          <Calendar tileColor={color} />
-        </div>
-        <div id='moodContainer'>
+          <Calendar tileColor={color} journalEntry={entries} />
+        </div> */}
+        {/* <div id='moodContainer'>
           <Moods colorAction={setColor} />
           <EntryList entryData={entries} removeEntry={removeEntry} />
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
         {}
         <Switch>
@@ -91,7 +105,7 @@ const App = () => {
             <Title /> 
               <div id="appContainer">
               <div id="calendarContainer">
-                <Calendar tileColor={color} />
+                <Calendar tileColor={color} journalEntry={entries} getTileData={getTileData}/>
               </div>
               <div id='moodContainer'>
                 <Moods colorAction={setColor} />

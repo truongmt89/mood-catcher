@@ -25,7 +25,7 @@ const EntryList = (props) => {
        console.log(journalMood)
         axios.post('http://localhost:5000/journal_entry',{
         
-            "journal_id": journalId,
+            "calendar_id": journalId,
             "journal_text":journalText,
             "journal_mood": journalMood 
         }).then((response) => {

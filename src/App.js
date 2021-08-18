@@ -5,7 +5,8 @@ import {
   Route,
   Link,
   Redirect
-} from "react-router-dom";
+} 
+from "react-router-dom";
 import axios from 'axios'
 import Title from './Components/Title';
 import EntryList from './Components/EntryList';
@@ -15,13 +16,13 @@ import Welcome from './Components/Welcome'
 import dc from './Components/dc2.png'; 
 import './App.css'
 import Homepage from "./Homepage";
-import Login from "./login";
+import FakeLogin from "./login";
 import { useDispatch } from 'react-redux'
 import {handleCalendarTileChange} from './Components/feature/appInit'
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   const [entries, setEntries] = useState([])
   const[color, setColor] = useState('#efb6b2')
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const App = () => {
     axios.get("http://localhost:5000/journal_entry")
     .then(function (response) {
       dispatch(handleCalendarTileChange(response.data))
-      setData(response.data.users)
+      // setData(response.data.users)
       setEntries(response.data)
     })
       .catch((err) => console.log(err));
@@ -55,7 +56,7 @@ const App = () => {
   return (
     <Router>
     <div className="App">
-      <img id = "dreamCatcher" src = {dc}/>
+      
       {/* { !loggedIn && <Login updateLoggedIn={updateLoggedIn}/>}
       { loggedIn && <Homepage/>}
       { loggedIn && <button onClick={updateLoggedIn}>Log Out</button>}
@@ -68,9 +69,10 @@ const App = () => {
         {}
         <Switch>
           <Route path = "/login">
-            <Login loginState={setLoggedIn}/>
+            <FakeLogin loginState={setLoggedIn} state= {loggedIn}/>
           </Route>
           <Route path = "/">
+          <img id = "dreamCatcher" src = {dc}/>
             {/* {!loggedIn ? <Redirect to="/login" /> : ''} */}
             <Welcome />
             <Title /> 

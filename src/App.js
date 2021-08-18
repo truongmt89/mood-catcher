@@ -85,39 +85,18 @@ const App = () => {
   return (
     <Router>
     <div className="App">
-      
-      {/* { !loggedIn && <Login updateLoggedIn={updateLoggedIn}/>}
-      { loggedIn && <Homepage/>}
-      { loggedIn && <button onClick={updateLoggedIn}>Log Out</button>}
-      { data && data.map((user, i) => {
-        console.log(user,'this is our ')
-        return (
-          <div key={i}>
-          {user.number}: {user.username}
-          </div> )
-        })} */}
-
-       
-      {/* <Welcome />
-      <Title /> 
-        <div id="appContainer">
-        <div id="calendarContainer">
-          <Calendar tileColor={color} journalEntry={entries} />
-        </div> */}
-        {/* <div id='moodContainer'>
-          <Moods colorAction={setColor} />
-          <EntryList entryData={entries} removeEntry={removeEntry} />
-        </div> */}
-      {/* </div> */}
-
         {}
         <Switch>
           <Route path = "/login">
-            <FakeLogin loginState={setLoggedIn} state= {loggedIn}/>
+            <Login loginState={setLoggedIn} state= {loggedIn}/>
           </Route>
           <Route path = "/">
+          {!loggedIn ? <Redirect
+            to={{
+              pathname: "/login",
+            }}
+          /> : ""}
           <img id = "dreamCatcher" src = {dc}/>
-            {/* {!loggedIn ? <Redirect to="/login" /> : ''} */}
             <Welcome />
             <Title /> 
               <div id="appContainer">

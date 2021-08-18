@@ -11,25 +11,25 @@
     top: 200px;
     width: 50%;
     height: 50%;
-    /* background: rgb(248, 185, 196); */
     z-index: 100;
     opacity: 1;
     border-radius: 20px;
     transition: opacity .5s;
+    font-size: 25px;
 }
 
 #quote{
     text-align: center;
     height: 30%;
     width: 90%;
-    margin: 50px auto 0px;
+    margin: 80px auto 0px;
 }
 
 #author{
     height: 20%;
     width: auto;
     float: right;
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
 #welcomeContainer{

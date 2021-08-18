@@ -27,7 +27,7 @@ function FakeLogin(props) {
     }
 
     useEffect(() =>{
-
+        props.loginState(true)
         document.getElementsByClassName('dc')[0].style.opacity = '1'
         document.getElementsByClassName('dc')[1].style.opacity = '0'
 

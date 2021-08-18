@@ -27,8 +27,7 @@ const App = () => {
   useEffect(() => {
     axios.get("http://localhost:5000/journal_entry")
     .then(function (response) {
-      // dispatch(handleCalendarTileChange(response.data))
-      // setCalendarData(response.data)
+      dispatch(handleCalendarTileChange(response.data))
       // setData(response.data.users)
       setEntries(response.data)
       console.log(response.data)
@@ -86,7 +85,7 @@ const App = () => {
   return (
     <Router>
     <div className="App">
-      <img id = "dreamCatcher" src = {dc}/>
+      
       {/* { !loggedIn && <Login updateLoggedIn={updateLoggedIn}/>}
       { loggedIn && <Homepage/>}
       { loggedIn && <button onClick={updateLoggedIn}>Log Out</button>}
@@ -114,9 +113,10 @@ const App = () => {
         {}
         <Switch>
           <Route path = "/login">
-            <Login loginState={setLoggedIn}/>
+            <FakeLogin loginState={setLoggedIn} state= {loggedIn}/>
           </Route>
           <Route path = "/">
+          <img id = "dreamCatcher" src = {dc}/>
             {/* {!loggedIn ? <Redirect to="/login" /> : ''} */}
             <Welcome />
             <Title /> 

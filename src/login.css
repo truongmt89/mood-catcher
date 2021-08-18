@@ -1,0 +1,21 @@
+.dc{
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 500px;
+    width: auto;
+    z-index: -1;
+}
+
+
+form{
+    display: flex;
+    height: 20px; 
+    width: 200px;
+    margin: 370px auto 0;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+}

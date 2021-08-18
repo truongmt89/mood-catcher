@@ -1,47 +1,76 @@
-import React, { useState} from "react";
+import React, {useEffect, useState} from "react";
 import './App.css';
+import './login.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    Redirect
+  } 
+  from "react-router-dom";
+
+import dc1 from './Components/Dreamcatcher-1.png';
+import dc2 from './Components/Dreamcatcher-2.png';
 
 function FakeLogin(props) {
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [boxes, setBoxes] = useState([false, false, false]);
-
-    let handleSubmit = (e) => {
-        console.log(e);
-        console.log("clicked");
-        props.updateLoggedIn();
+    function route(){
+        props.loginState(true)
+        window.location = 'localHost:3000/'
+        console.log(window.location.href)
+        console.log(props.state)
     }
 
-    let updateBox = (e, boxNum) => {
-        // let copy = [...boxes];
-        // copy[boxNum] = e.target.checked;
-        // setBoxes(copy);
-        boxes[boxNum] = e.target.checked;
-        setBoxes(boxes);
+    function dcAnimation(){
+        
     }
+
+    useEffect(() =>{
+
+        document.getElementsByClassName('dc')[0].style.opacity = '1'
+        document.getElementsByClassName('dc')[1].style.opacity = '0'
+
+        let interval = setInterval(() =>{
+            if( document.getElementsByClassName('dc')[0].style.opacity == '1'){
+                document.getElementsByClassName('dc')[0].style.opacity = '0'
+                document.getElementsByClassName('dc')[1].style.opacity = '1'
+            }else{
+                document.getElementsByClassName('dc')[1].style.opacity = '0'
+                document.getElementsByClassName('dc')[0].style.opacity = '1'
+            }
+        },1000)
+
+        return () => {
+            clearInterval(interval)
+        }
+
+    },[])
+
+    
+  
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username:</label>
-                <input type="text" name="username" value={username} onChange={e => setUsername(e.target.value)}/>
-                <br />
-                <label htmlFor="password">Password:</label>
-                <input type="text" name="password" value={password} onChange={e => setPassword(e.target.value)}/>
-                <br />
-                <fieldset>
-                </fieldset>
-                <input type="submit" value="login" />
-                <br />
-                <div>
-                    {boxes.map((box, i) => {
-                        return (
-                            <div key={i}>box {i+1}: {box ? "true": "false"}</div>
-                        )
-                    })}
-                </div>
+          
+          <form action="/action_page.php" >
+          <img className = 'dc' src = {dc1}/>
+          <img className = 'dc' src = {dc2}/>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"/>
+                <label for="passwork">Password:</label>
+                <input type="text" id="password" name="password"/>
             </form>
+
+            <Link className="career-btn sourceSansPro-sanSerif"
+                to="/"
+                ><button style = {{height: '50px', width: '100px',marginTop: '100px'}}>Login</button>
+            </Link>
+            
+                
+            
+
+        
         </div>
       );
     }

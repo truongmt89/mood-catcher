@@ -9,6 +9,7 @@
 #entryContainer{
     display: justify;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 #submit{

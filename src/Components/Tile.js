@@ -1,4 +1,6 @@
 import React from 'react';
+import {handleJournalEntryIdChange} from './feature/appInit'
+import {useDispatch} from 'react-redux';
 import EntryList from './EntryList'
 
 function getColorFromMood(mood){
@@ -23,10 +25,12 @@ function getColorFromMood(mood){
 }
 
 const Tile = (props) => {
-
+    let dispatch = useDispatch();
     const handleTileClick = (event,id) => {
+        dispatch(handleJournalEntryIdChange(id))
         console.log(id)
         props.getTileData(id)
+       
         console.log(props.tileMood)
         let oldSelect = document.getElementsByClassName("selected")
             if(oldSelect.length !== 0){

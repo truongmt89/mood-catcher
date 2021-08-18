@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const appInit = createSlice({
     name:"appInit",
     initialState:{
-        mood:0,
+        mood:"",
         journalEntryId:0,
         text:"",
         calendarTile:[],

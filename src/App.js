@@ -10,7 +10,7 @@ import dc from './Components/dc2.png';
 import './App.css'
 import Homepage from "./Homepage";
 import Login from "./login";
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import {handleCalendarTileChange} from './Components/feature/appInit'
 
 const App = () => {
@@ -20,7 +20,9 @@ const App = () => {
   const [currID, setID] = useState(0)
   const[color, setColor] = useState('#efb6b2')
   const dispatch = useDispatch();
-
+  const journalId = useSelector((state) => state.appInit.journalEntryId); 
+  const journalText = useSelector((state) => state.appInit.text); 
+  const journalMood = useSelector((state) => state.appInit.mood);
   const BASE_URL = "http://localhost:5000/";
   useEffect(() => {
     axios.get("http://localhost:5000/journal_entry")
@@ -34,7 +36,24 @@ const App = () => {
       .catch((err) => console.log(err));
   }, [])
 
-  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   console.log(journalId)
+   console.log(journalText)
+   console.log(journalMood)
+    axios.post('http://localhost:5000/journal_entry',{
+    
+        "calendar_id": journalId,
+        "journal_text":journalText,
+        "journal_mood": journalMood 
+    }).then((response) => {
+      
+      setEntries(arr => [...arr,response.data])
+      }, (error) => {
+        console.log(error);
+      });
+    
+}
 
   const removeEntry = index => {
     setEntries(
@@ -107,7 +126,7 @@ const App = () => {
               </div>
               <div id='moodContainer'>
                 <Moods colorAction={setColor} />
-                <EntryList id = {currID} entryData={entries} removeEntry={removeEntry} />
+                <EntryList id = {currID} handleSubmit={(e) => handleSubmit(e)}entryData={entries} removeEntry={removeEntry} />
               </div>
             </div>
           </Route>

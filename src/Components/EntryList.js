@@ -11,35 +11,34 @@ const EntryList = (props) => {
     // const [mood,setMood] = useState(0)
     const dispatch = useDispatch();
     const [currEntry, setcurrEntry] = useState(null)
-    const journalId = useSelector((state) => state.appInit.journalEntryId); 
-    const journalText = useSelector((state) => state.appInit.text); 
-    const journalMood = useSelector((state) => state.appInit.mood);
+
     const handleTitleChange = (e) => {
         dispatch(handleTextChange(e.target.value))
         setText(e.target.value)
         // console.log(text)
     }
     
-    const handleSubmit= () => {
-        console.log(props.entryData)
-       console.log(journalId)
-       console.log(journalText)
-       console.log(journalMood)
-        axios.post('http://localhost:5000/journal_entry',{
+    // const handleSubmit= () => {
+    //     console.log(props.entryData)
+    //    console.log(journalId)
+    //    console.log(journalText)
+    //    console.log(journalMood)
+    //     axios.post('http://localhost:5000/journal_entry',{
         
-            "calendar_id": journalId,
-            "journal_text":journalText,
-            "journal_mood": journalMood 
-        }).then((response) => {
-            console.log(response);
-          }, (error) => {
-            console.log(error);
-          });
-
-    }
+    //         "calendar_id": journalId,
+    //         "journal_text":journalText,
+    //         "journal_mood": journalMood 
+    //     }).then((response) => {
+    //         console.log(response);
+    //       }, (error) => {
+    //         console.log(error);
+    //       });
+    //       setText("")
+    // }
 
     let textAreaValue = ""
     useEffect(() => {
+        setText("Let's talk about it...")
         if(props.entryData.length === 0){
             return; 
         }else{
@@ -52,7 +51,7 @@ const EntryList = (props) => {
             
         }
         
-    }, [props.id, props.entryData])
+    }, [props.id,props.entryData]) // props.entryData
        
     // }
     // const {entryData} = props;
@@ -70,7 +69,7 @@ return  (
         {/* {mapAll()} */}
         <div id = "entryContainer"> 
             <textarea id = 'entryBox' onChange={handleTitleChange} value = {text}></textarea>
-            <button id = "submit" onClick={()=>handleSubmit()}>submit</button>
+            <button id = "submit" onClick={props.handleSubmit}>submit</button>
         </div>
     </section>
 );};

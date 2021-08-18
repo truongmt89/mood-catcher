@@ -1,7 +1,6 @@
 import React from 'react';
 import './calendar.css';
 import PropTypes from 'prop-types';
-import {handleJournalEntryIdChange} from './feature/appInit'
 import { useDispatch,useSelector } from 'react-redux'
 import Tile from './Tile';
 import EntryList from './EntryList'

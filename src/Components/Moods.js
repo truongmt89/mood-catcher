@@ -36,30 +36,46 @@ const Moods = (props) => {
         //I implemented the code backwards; the id dispatched depends on the color given.
         switch(color){
             case '#E9CC7F':
-                dispatch(handleMoodChange(1))
+                dispatch(handleMoodChange("Excited"))
                 break;
             case '#C4DFF5':
-                dispatch(handleMoodChange(2))
+                dispatch(handleMoodChange("Happy"))
                 break;
             case '#9292BA':
-                dispatch(handleMoodChange(3))
+                dispatch(handleMoodChange("Productive"))
                 break;
             case '#CEBECC':
-                dispatch(handleMoodChange(4))
+                dispatch(handleMoodChange("Sad"))
                 break;
             case '#3085BB':
-                dispatch(handleMoodChange(5))
+                dispatch(handleMoodChange("Anxious"))
                 break;
             case '#706B8F':
-                dispatch(handleMoodChange(6))
+                dispatch(handleMoodChange("Stressed"))
                 break;
             case '#80B5B3':
-                dispatch(handleMoodChange(7))
+                dispatch(handleMoodChange("Angry"))
                 break;
+                default:
+                    return '';
         }
         // dispatch(handleMoodChange(event.target.id))
         setColor(color)
     }
+//     case "Excited":           
+//     return '#E9CC7F';
+// case "Happy":
+//     return '#C4DFF5';
+// case "Productive":
+//     return '#9292BA';
+// case "Sad":
+//     return '#CEBECC';
+// case "Anxious":
+//     return '#3085BB';
+// case "Stressed":
+//     return '#706B8F';
+// case "Angry":
+//     return '#80B5B3';
 
     return(
         <div>   

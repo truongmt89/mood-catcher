@@ -10,61 +10,66 @@ const EntryList = (props) => {
     // const [entryId,setEntryID] = useState(0);
     // const [mood,setMood] = useState(0)
     const dispatch = useDispatch();
-    const journalId = useSelector((state) => state.appInit.journalEntryId); 
-    const journalText = useSelector((state) => state.appInit.text); 
-    const journalMood = useSelector((state) => state.appInit.mood);
+    const [currEntry, setcurrEntry] = useState(null)
+
     const handleTitleChange = (e) => {
         dispatch(handleTextChange(e.target.value))
         setText(e.target.value)
         // console.log(text)
     }
     
-    const handleSubmit= () => {
-       console.log(journalId)
-       console.log(journalText)
-       console.log(journalMood)
-        axios.post('http://localhost:5000/journal_entry',{
+    // const handleSubmit= () => {
+    //     console.log(props.entryData)
+    //    console.log(journalId)
+    //    console.log(journalText)
+    //    console.log(journalMood)
+    //     axios.post('http://localhost:5000/journal_entry',{
         
-            "journal_id": journalId,
-            "journal_text":journalText,
-            "journal_mood": journalMood 
-        }).then((response) => {
-            console.log(response);
-          }, (error) => {
-            console.log(error);
-          });
-
-    }
-        // fetch("http://localhost:5000/journal_entry",{
-        //     headers: {"content-type":"application/json"},
-        //     cors: "no-cors", 
-        //     method: "POST", 
-        //     body: JSON.stringify({
-        //         "journal_month": 4,
-        //         "journal_day": 5,
-        //         "journal_title": "title",
-        //         "journal_text":  "An updated Post!",
-        //         "journal_mood":  "Happy"
-
-        //     })
-        // })
+    //         "calendar_id": journalId,
+    //         "journal_text":journalText,
+    //         "journal_mood": journalMood 
+    //     }).then((response) => {
+    //         console.log(response);
+    //       }, (error) => {
+    //         console.log(error);
+    //       });
+    //       setText("")
     // }
-    const {entryData} = props;
-    const mapAll = () => {
-        return entryData.map((entry) => {
-        return ( 
-        <div>
-            {entry.journal_title}
-        </div>)
-        })
-    }
 
-return (
+    let textAreaValue = ""
+    useEffect(() => {
+        setText("Let's talk about it...")
+        if(props.entryData.length === 0){
+            return; 
+        }else{
+            let text = props.entryData.find((obj) => {
+                return   obj.calendar_id === props.id
+                })
+                if (text !== undefined) {
+                    setText(text.journal_text)
+                }
+            
+        }
+        
+    }, [props.id,props.entryData]) // props.entryData
+       
+    // }
+    // const {entryData} = props;
+    // const mapAll = () => {
+    //     return entryData.map((entry) => {
+    //     return ( 
+    //     <div>
+    //         {entry.journal_title}
+    //     </div>)
+    //     })
+    // }
+
+return  (
     <section>
-        {mapAll()}
+        {/* {mapAll()} */}
         <div id = "entryContainer"> 
-            <textarea id = 'entryBox' onChange={handleTitleChange} value={text} placeholder = "Lets talk about it..."></textarea>
-            <button id = "submit" onClick={()=>handleSubmit()}>submit</button>
+            <textarea id = 'entryBox' onChange={handleTitleChange} value = {text}></textarea>
+            <button id = "submit" onClick={props.handleSubmit}>submit</button>
         </div>
     </section>
 );};

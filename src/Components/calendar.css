@@ -2,7 +2,7 @@
 
 
 #calendar-container{
-    color: var(--primary);
+    color: var(#F8D8E8);
     width: 500px;
     height: auto;
     display: flex;
@@ -19,7 +19,7 @@
 .calendar{
     width: 400px;
     height: 900px;
-    background-color: white;
+    background-color: transparent;
     display: grid;
     grid-template-columns: repeat(13, 24px);
     grid-template-rows: repeat(32, 24px);
@@ -31,7 +31,7 @@
 .tile{
     width: 24px;
     height: 24px;
-    background-color: #efb6b2;
+    background-color: #F8D8E8;
     border: 1px solid #4e4e4e;
 }
 

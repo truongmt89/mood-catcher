@@ -2,6 +2,7 @@
 
 h4{
     font-family: 'Amatic SC', cursive;
+    text-align: center;
     font-size: 25px;
     color: #4e4e4e;
     text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
@@ -15,6 +16,7 @@ h4{
     font-size: 40px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     margin: 0 auto;
     text-align: center;
 }
@@ -25,64 +27,82 @@ h4{
 }
 
 .fa-grin-beam:hover{
-    color: #7B9BE5;
+    color: #E9CC7F;
+    z-index: 500;
 }
 
 .fa-grin-beam:hover + p{
     font-size: 24px;
-    color: #7B9BE5;
+    color: #E9CC7F;
+    text-shadow: "2px 2px 5px #4abdff";
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(133, 133, 133);
 }
 
 .fa-smile:hover{
-    color: #FCF771;
+    color: #C4DFF5;
 }
 
 .fa-smile:hover + p{
     font-size: 24px;
-    color: #FCF771;
+    color: #C4DFF5;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(133, 133, 133);
 }
 
 .fa-grin-stars:hover{
-    color: #33752C;
+    color: #9292BA;
 }
 
 .fa-grin-stars:hover + p{
     font-size: 24px;
-    color: #33752C;
+    color: #9292BA;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(133, 133, 133);
 }
 
 .fa-frown:hover{
-    color: #9078B1;
+    color: #CEBECC;
 }
 
 .fa-frown:hover + p{
     font-size: 24px;
-    color: #9078B1;
+    color: #CEBECC;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(133, 133, 133);
 }
 
 .fa-grimace:hover{
-    color: #0D3F7C;
+    color: #3085BB;
 }
 
 .fa-grimace:hover + p{
     font-size: 24px;
-    color: #0D3F7C;
+    color: #3085BB;
+    text-shadow: "2px 2px 5px #4abdff";
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(133, 133, 133);
 }
 
 .fa-tired:hover{
-    color: #4B021D;
+    color: #706B8F;
 }
 
 .fa-tired:hover + p{
     font-size: 24px;
-    color: #4B021D;
+    color: #706B8F;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(133, 133, 133);
 }
 
 .fa-angry:hover{
-    color: #A9112B;
+    color: #80B5B3;
 }
 
 .fa-angry:hover + p{
     font-size: 24px;
-    color: #A9112B;
+    color: #80B5B3;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(133, 133, 133);
 }
+

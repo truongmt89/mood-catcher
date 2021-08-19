@@ -5,8 +5,9 @@ h4{
     text-align: center;
     font-size: 25px;
     color: #4e4e4e;
-    text-shadow: 4px 4px 3px rgba(0,0,0,0.1); 
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px white, 0 0 40px whitesmoke, 0 0 50px white, 0 0 60px white, 0 0 70px whitesmoke;
     padding-top: 100px;
+    text-emphasis: bold;
 }
 
 #moods{
@@ -19,6 +20,8 @@ h4{
     justify-content: center;
     margin: 0 auto;
     text-align: center;
+    text-shadow: 0 0 10px rgb(10, 10, 10), 0 0 20px rgb(146, 140, 140), 0 0 30px #c125b4, 0 0 40px #7033a29e, 0 0 50px #cb4889, 0 0 60px #fF8D8E, 0 0 70px #da8687;
+    text-emphasis: bold;
 }
 
 .moodText{
@@ -58,7 +61,7 @@ h4{
     font-size: 24px;
     color: #9292BA;
     -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: rgb(133, 133, 133);
+    -webkit-text-stroke-color: rgb(249, 245, 245);
 }
 
 .fa-frown:hover{
@@ -81,7 +84,7 @@ h4{
     color: #3085BB;
     text-shadow: "2px 2px 5px #4abdff";
     -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: rgb(133, 133, 133);
+    -webkit-text-stroke-color: rgb(252, 251, 251);
 }
 
 .fa-tired:hover{
@@ -92,7 +95,7 @@ h4{
     font-size: 24px;
     color: #706B8F;
     -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: rgb(133, 133, 133);
+    -webkit-text-stroke-color: rgb(244, 239, 239);
 }
 
 .fa-angry:hover{
@@ -103,6 +106,6 @@ h4{
     font-size: 24px;
     color: #80B5B3;
     -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: rgb(133, 133, 133);
+    -webkit-text-stroke-color: rgb(247, 247, 247);
 }
 

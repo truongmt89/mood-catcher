@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# mood-catcher
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screen Shot 2021-08-18 at 2 23 56 PM](https://user-images.githubusercontent.com/73672690/129978213-86fd1b7d-07b4-4ef6-8277-3bdb1b80a3f4.png)
+![Screen Shot 2021-08-18 at 2 25 13 PM](https://user-images.githubusercontent.com/73672690/129978221-433f3ee9-cdfd-4bff-bef4-2d6ea6118297.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Introduction
 
-### `yarn start`
+This site was created as a Capstone project for Ada Developers Academy. The purpose of this site is to log your daily mood and write your feelings. The process should be fun and creative. Don't let the time throw you off, with mood-catcher you can start in the beginning, middle, or end of the year. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The site should be used as a tool to record your mood at regular intervals. This tool is to help you look for patterns in how your mood vary over time and connect those moods to events that occurred during your day. The journal entry should be a way to discuss about your feelings more clearly, avoid or resolve conflicts better, and move past difficult feelings more easily. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features 
 
-### `yarn test`
+☻ You will get a new daily quote to start each entry every day that you log;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+☻ Choose a mood to log for each day;
 
-### `yarn build`
+☻ A calendar grid for an entire year to see all your entries represented by a color/mood;
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+☻ All your journal entries will be stored in a database and will be rendered to the page to view whenever you choose a day you have logged.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-Clone this repository
 
-### `yarn eject`
+-Install dependencies using 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+     -$ yarn install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-Install redux using 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+      -$ yarn add redux
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-Clone the backend repository from this link https://github.com/Crintion/Dream-Catcher-App
 
-## Learn More
+   -Follow the installation
+  
+-Start server using 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+     -$ yarn start 

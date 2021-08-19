@@ -113,7 +113,7 @@ const App = () => {
         {}
         <Switch>
           <Route path = "/login">
-            <FakeLogin loginState={setLoggedIn} state= {loggedIn}/>
+            <Login loginState={setLoggedIn} state= {loggedIn}/>
           </Route>
           <Route path = "/">
           <img id = "dreamCatcher" src = {dc}/>

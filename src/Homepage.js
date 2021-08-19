@@ -1,13 +1,13 @@
-import React from "react";
-import './App.css';
+// import React from "react";
+// import './App.css';
 
-function Homepage(props) {
+// function Homepage(props) {
 
-  return (
-    <div>
-      we're in homepage
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       we're in homepage
+//     </div>
+//   );
+// }
 
-export default Homepage;
+// export default Homepage;

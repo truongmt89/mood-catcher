@@ -21,32 +21,61 @@ const Moods = (props) => {
             selected[0].style.backgroundColor = color
         }        
     }
-    
-    function grabMood(event){
-        console.log(event.target.id,'this is our event')
-        dispatch(handleMoodChange(event.target.id))
-        switch (event.target.id) {
-            case 1:
-                setColor('#7B9BE5')
-                break;
-            case 2:
-                setColor('#FCF771')
-                break;
-            case 3:
-                setColor('#33752C')
-                break;
-            case 4:
-                setColor('#9078B1')
-                break;
-            case 5:
-                setColor('#0D3F7C')
-                break;
-            default:
-                setColor('#4B021D')
-                break;
-          }
 
+    setTimeout(() =>{
+        if(document.getElementById('moodContainer')){
+            document.getElementById('moodContainer').style.opacity = "1"
+        }
+    },5500)
+    
+    function grabMood(color){
+        //*****************CAN NOT GRAB ID OF FONT AWESOSME ICON ******************/
+        // console.log(event.target.getAttribute('id'),'this is our event')
+        // console.log(event.target.id, event.target)
+
+        //I implemented the code backwards; the id dispatched depends on the color given.
+        switch(color){
+            case '#E9CC7F':
+                dispatch(handleMoodChange("Excited"))
+                break;
+            case '#C4DFF5':
+                dispatch(handleMoodChange("Happy"))
+                break;
+            case '#9292BA':
+                dispatch(handleMoodChange("Productive"))
+                break;
+            case '#CEBECC':
+                dispatch(handleMoodChange("Sad"))
+                break;
+            case '#3085BB':
+                dispatch(handleMoodChange("Anxious"))
+                break;
+            case '#706B8F':
+                dispatch(handleMoodChange("Stressed"))
+                break;
+            case '#80B5B3':
+                dispatch(handleMoodChange("Angry"))
+                break;
+                default:
+                    return '';
+        }
+        // dispatch(handleMoodChange(event.target.id))
+        setColor(color)
     }
+//     case "Excited":           
+//     return '#E9CC7F';
+// case "Happy":
+//     return '#C4DFF5';
+// case "Productive":
+//     return '#9292BA';
+// case "Sad":
+//     return '#CEBECC';
+// case "Anxious":
+//     return '#3085BB';
+// case "Stressed":
+//     return '#706B8F';
+// case "Angry":
+//     return '#80B5B3';
 
     return(
         <div>   
@@ -56,32 +85,32 @@ const Moods = (props) => {
         </h4>
         </div>
             <div  id = 'moods'>
-                <div style = {{width: '40px', height: '40px'}}>
-                    <FontAwesomeIcon  id={1}   onClick = {(e)=>grabMood(e)} icon={faGrinBeam} className="fa-grin-beam" />
+                <div style = {{width: '50px', height: '40px',marginLeft: '10px'}}>
+                    <FontAwesomeIcon onClick = {(e)=>grabMood(e)} icon={faGrinBeam} className="fa-grin-beam"    onClick = {()=>grabMood('#E9CC7F')} />
                     <p className = "moodText excited">excited</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}} id={2}   onClick = {(e)=>grabMood(e)}>
-                    <FontAwesomeIcon icon={faSmile} className="fa-smile" />
+                <div style = {{width: '50px', height: '40px'}}>
+                    <FontAwesomeIcon icon={faSmile} className="fa-smile"  onClick = {()=>grabMood('#C4DFF5')}/>
                     <p className = "moodText happy">happy</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}} id={3}   onClick = {(e)=>grabMood(e)}>
-                    <FontAwesomeIcon icon={faGrinStars} className="fa-grin-stars" />
+                <div style = {{width: '50px', height: '40px'}}>
+                    <FontAwesomeIcon icon={faGrinStars} className="fa-grin-stars"  onClick = {()=>grabMood('#9292BA')}/>
                     <p className = "moodText productive">productive</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}}  id={4}  onClick = {(e)=>grabMood(e)}>
-                    <FontAwesomeIcon icon={faFrown} className="fa-frown" />
+                <div style = {{width: '50px', height: '40px'}}>
+                    <FontAwesomeIcon icon={faFrown} className="fa-frown"   onClick = {()=>grabMood('#CEBECC')}/>
                     <p className = "moodText sad">sad</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}} id={5}   onClick = {(e)=>grabMood(e)}>
-                    <FontAwesomeIcon icon={faGrimace} className="fa-grimace" />
+                <div style = {{width: '50px', height: '40px'}}>
+                    <FontAwesomeIcon icon={faGrimace} className="fa-grimace"  onClick = {()=>grabMood('#3085BB')}/>
                     <p className = "moodText anxious ">anxious</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}} id={6}   onClick = {(e)=>grabMood(e)}>
-                    <FontAwesomeIcon icon={faTired} className="fa-tired" />
+                <div style = {{width: '50px', height: '40px'}}>
+                    <FontAwesomeIcon icon={faTired} className="fa-tired"  onClick = {()=>grabMood('#706B8F')} />
                     <p className = "moodText stressed ">stressed</p>
                 </div>
-                <div style = {{width: '40px', height: '40px'}} id={7}   onClick = {(e)=>grabMood(e)}>
-                    <FontAwesomeIcon icon={faAngry} className="fa-angry" />
+                <div style = {{width: '50px', height: '40px'}}>
+                    <FontAwesomeIcon icon={faAngry} className="fa-angry"  onClick = {()=>grabMood('#80B5B3')} />
                     <p className = "moodText angry">angry</p>
                 </div>
             </div>
